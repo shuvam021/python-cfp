@@ -1,3 +1,4 @@
+import time
 from random import randint
 
 """Day 06 Assignments"""
@@ -58,6 +59,19 @@ def coupon_numbers_program() -> None:
     print(coupons_list)
 
 
+def stopwatch_program():
+    input("Press Enter to start")
+    start_time = time.time()
+    input("Press Enter to stop")
+    end_time = time.time()
+    sec = end_time - start_time
+    mins = sec // 60
+    sec = sec % 60
+    hours = mins // 60
+    mins = mins % 60
+    print("Time Lapsed = {0}:{1}:{2}".format(int(hours), int(mins), sec))
+
+
 if __name__ == '__main__':
     """Logical Programs"""
     # fibonacci_series_program()                            # Q 1
@@ -65,3 +79,4 @@ if __name__ == '__main__':
     # prime_number_program()                                # Q 3
     # reverse_number_program()                              # Q 4
     # coupon_numbers_program()                              # Q 5
+    # stopwatch_program()                                   # Q 6

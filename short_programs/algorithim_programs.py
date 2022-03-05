@@ -1,6 +1,7 @@
 from utils.helper_methods import primes
 from utils.search_algo import (binary_search, binary_search_second,
                                bubble_sort, insertion_sort, merge_sort)
+import math
 
 """Algorithm Programs"""
 
@@ -65,11 +66,10 @@ def anagram_detection(str1, str2):
     return False
 
 
-def get_prime_nos(
-        x: int = 0,
-        y: int = int(input("insert max range to get prime nos: "))
-) -> list:
+def get_prime_nos(x: int = 0, y: int = None) -> list:
     """question no 07"""
+    if not y:
+        y = int(input("insert max range to get prime nos: "))
     return primes(x, y)
 
 
@@ -89,17 +89,14 @@ def get_prime_palindrome(x):
 
 
 def guess_a_number():
-    # TODO: Q. 10 (Algorithm Programs): recurcive check
     """question no 10"""
-    n = int(input("range: "))
-    N = 2**n
+    N = int(input("range: "))
+    n = int(math.log(N, 2))
+    num_list = [i for i in range(N)]
+    print(num_list)
     user_input = int(input(f"guess a number from 0 - {n}: "))
-    position = binary_search_second(
-        ele_list=[i for i in range(N)],
-        search_ele=user_input
-    )
-    print("not found" if position == -
-          1 else f"found at  = {position} position")
+    position = binary_search_second(ele_list=num_list, search_ele=user_input)
+    print("not found" if position == -1 else f"found at  = {position} position")
 
 
 def string_replace_program(msg: str = "", val: dict = {}):

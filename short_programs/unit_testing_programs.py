@@ -58,12 +58,31 @@ def monthly_payment() -> float:
     return payment
 
 
+def custom_sqrt():
+    c = float(input("Insert a number to find squre root: "))
+    epsilon = 1e-15  # // relative error tolerance
+    t = c  # // estimate of the square root of c
+    while abs(t - c/t) > epsilon*t:
+        t = (c/t + t) / 2.0
+    print(t)
+
+
+def decimal_to_binary(ip_val):
+    if ip_val >= 1:
+        decimal_to_binary(ip_val // 2)
+    print(ip_val % 2, end='')
+
+
+def swap_nibbles(x):
+    return ((x & 0x0F) << 4 | (x & 0xF0) >> 4)
+
+
 if __name__ == '__main__':
     """Programs for NUnit Testing"""
-    vending_machine_program(int(input("Insert your cash amount: ")))    # Q 1
-    day_of_week()                                                       # Q 2
-    temperature_conversion()                                            # Q 3
-    monthly_payment()                                                   # Q 4
-    # TODO: N-unit test - Q 5,
-    # TODO: N-unit test - Number to Binary conversion(6),
-    # TODO: N-unit test - nibble_to_binary(7)
+    # vending_machine_program(int(input("Insert your cash amount: ")))                  # Q 1
+    # day_of_week()                                                                     # Q 2
+    # temperature_conversion()                                                          # Q 3
+    # monthly_payment()                                                                 # Q 4
+    # custom_sqrt()                                                                     # Q 5
+    # decimal_to_binary(int(input("insert a number to covert into binary: ")))          # Q 6
+    # print(swap_nibbles(int(input("insert a number to find it's migic number: "))))    # Q 7

@@ -1,7 +1,5 @@
 from random import shuffle
 
-"""Q 8, 9"""
-
 
 class DeckOfCards:
     suit = ["Clubs", "Diamonds", "Hearts", "Spades"]
@@ -36,5 +34,9 @@ class DeckOfCards:
 
 
 if __name__ == '__main__':
+    """
+    Q 8
+    Q 9
+     """
     d = DeckOfCards()
     d.solution()

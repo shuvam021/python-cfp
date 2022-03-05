@@ -1,9 +1,3 @@
-import json
-import os
-
-"""Q 1, 2"""
-
-
 class Inventory:
     def __init__(self, name, weight, price_per_kg):
         self.name: str = name
@@ -27,26 +21,3 @@ class Inventory:
         return f"Inventory({self.name}, {self.weight}, {self.price_per_kg})"
 
 
-class InventoryWrapper:
-    file = '../assets/inventory.json'
-
-    def __init__(self):
-        self.records: list = []
-
-    def insert(self):
-        if not os.path.exists(self.file):
-            raise FileNotFoundError
-
-        with open(self.file) as f:
-            data = json.load(f)
-        for item in data:
-            self.records.append(Inventory(**item))
-
-    def print_records(self):
-        print(json.dumps([i.to_dict for i in self.records], indent=4))
-
-
-if __name__ == '__main__':
-    iw = InventoryWrapper()
-    iw.insert()
-    iw.print_records()

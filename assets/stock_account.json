@@ -1,0 +1,14 @@
+[
+    {
+        "stock_symbol": "something",
+        "number_of_shares": 2500,
+        "price_per_share": 500,
+        "date": "2022-03-05"
+    },
+    {
+        "stock_symbol": "something again",
+        "number_of_shares": 4000,
+        "price_per_share": 200,
+        "date": "2022-03-05"
+    }
+]
